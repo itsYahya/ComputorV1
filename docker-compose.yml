@@ -1,0 +1,12 @@
+services:
+  computor:
+    build:
+      context: ./build
+      dockerfile: Dockerfile
+    container_name: computor
+    command: bash
+    stdin_open: true      # keeps STDIN open so you can interact
+    tty: true             # allocates a pseudo-TTY
+    volumes:
+      - ./data:/data
+      - ./code:/computor
