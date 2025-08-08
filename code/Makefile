@@ -8,6 +8,8 @@ HEADERSFILES = $(subst inc/, , $(HEADERSFILES_:.h=))
 				
 HEADERS := $(addprefix inc/, $(HEADERSFILES:=.h))
 
+INC = $(addprefix -I, ${dir ${HEADERS}})
+
 FILES_ = $(wildcard *.c) $(wildcard src/*.c) $(wildcard src/**/*.c)
 
 FILES__ := $(subst src/, , $(FILES_))
